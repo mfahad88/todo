@@ -34,6 +34,12 @@ public class TodoService {
         return this.repository.save(todo1);
     }
 
+    public Todo deleteTodo(Integer id){
+        Todo todo=this.repository.findById(id).get();
+        todo.setVisible(false);
+        return this.repository.save(todo);
+    }
+
     public Todo saveTodo(Todo todo){
         System.out.println(todo.toString());
         return this.repository.save(todo);

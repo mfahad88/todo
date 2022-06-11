@@ -35,6 +35,13 @@ public class TodoController {
         return this.service.updateTodo(todo);
     }
 
+    @GetMapping("/delete")
+    @CrossOrigin("*")
+    public Todo deleteTodoById(@RequestParam("id") Integer id){
+        System.out.println(id);
+        return this.service.deleteTodo(id);
+    }
+
     @PostMapping("/save")
     @CrossOrigin("*")
     public Todo saveTodo(@RequestBody Todo todo){
